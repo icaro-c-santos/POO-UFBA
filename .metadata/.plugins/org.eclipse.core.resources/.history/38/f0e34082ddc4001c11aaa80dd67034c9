@@ -1,0 +1,11 @@
+package entidades;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Aluno {
+	
+	private Long id;
+	private String nome;
+	
+}
