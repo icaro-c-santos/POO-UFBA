@@ -1,0 +1,52 @@
+package entidades;
+
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Aluno extends Pessoa{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long matricula;
+	private int hasc;
+	public Aluno(){
+		
+	}
+	public Aluno(String nome, Date nascimento, String cpf,Long matricula) {
+		super(nome, nascimento, cpf);
+		this.matricula=matricula;
+	}
+	public Aluno(String nome, Date nascimento, String cpf) {
+		super(nome, nascimento, cpf);
+	}
+
+	public Long getMatricula() {
+		return matricula;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null || getClass() != obj.getClass()) return false;
+        Aluno outroAluno = (Aluno) obj;
+        if(this.getMatricula()==outroAluno.getMatricula()) {
+        	return true;
+        }
+        return false;
+    }
+	
+	@Override
+	public int hashCode() {
+		return hasc.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: "+getNome()+"\n Nascimento: "+getNascimento()+"\nCpf: "+getCpf()+"\n Matricula: "+getMatricula()+"\n";
+	}
+
+}

@@ -1,0 +1,10 @@
+package DAOs;
+
+public class Dao_Turma {
+	
+	public Dao_Turma() {
+		
+	}
+	
+	
+}

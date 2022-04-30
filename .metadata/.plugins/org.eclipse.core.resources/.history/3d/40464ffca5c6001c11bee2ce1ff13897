@@ -1,0 +1,80 @@
+package DAOs;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import org.hibernate.hql.internal.ast.tree.IsNullLogicOperatorNode;
+
+import entidades.Aluno;
+
+public class Dao_Aluno {
+	
+	
+	
+	
+	public boolean saveAluno(Aluno aluno){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+	    em.persist(aluno);
+	    em.getTransaction().commit();
+	    return true;
+	
+}
+	
+	public boolean updateAluno(Long matricula,String nome,Date datanascimento,String Cpf){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Aluno aluno = em.find(Aluno.class, matricula);
+		if(aluno==null) { return false;}
+		 em.merge(aluno).
+		//if(aluno)
+	   // em.merge(alunoAntigo);
+	  //  em.getTransaction().commit();
+	    return true;
+	
+}
+	
+	
+	public List<Aluno> getAll(){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		TypedQuery<Aluno> query = em.createQuery("select u from Aluno u",Aluno.class);
+	    List<Aluno> list = query.getResultList();
+	    return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Aluno> getAlunoNome(String nome){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		List<Aluno> list = em.createQuery("SELECT c FROM Aluno c WHERE c.nome LIKE :Cnome").setParameter("Cnome", nome).getResultList();
+	    return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Aluno> getAlunoCpf(String cpf){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		List<Aluno> list = em.createQuery("SELECT c FROM Aluno c WHERE c.cpf LIKE :Cparamet").setParameter("Cparamet", cpf).getResultList();
+	    return list;
+	}
+	
+	public Aluno getAlunoMatricula(Long matricula){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+	    return em.find(Aluno.class, matricula);
+	}
+
+	
+	
+}
+
+
+

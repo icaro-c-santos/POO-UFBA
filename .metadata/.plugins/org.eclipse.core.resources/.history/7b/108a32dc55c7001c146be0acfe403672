@@ -1,0 +1,29 @@
+import java.util.Date;
+
+import entidades.Aluno;
+
+public class AlunoTest {
+			
+
+	static void TesteAluno() {
+		
+		
+		
+		
+	}
+	
+	
+	
+	static boolean TestEquals(){
+	
+			
+		
+		
+		boolean b1 = a1.equals(a2);
+		
+		
+		return false;
+	}
+	
+	
+}

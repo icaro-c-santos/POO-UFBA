@@ -1,0 +1,27 @@
+import java.util.Date;
+
+import entidades.Aluno;
+
+public class AlunoTest {
+			
+
+	static void TesteAluno() {
+		
+		
+		
+		
+	}
+	
+	
+	
+	static boolean TestEquals(){
+		
+		Aluno a1 = new Aluno("ICARO",new Date(14, 2, 1995),"070.783.325-63");
+		Aluno a2 = new Aluno("ICARO",new Date(14, 2, 1995),"070.783.325-63");
+		
+		
+		return false;
+	}
+	
+	
+}

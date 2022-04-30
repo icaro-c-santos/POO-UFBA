@@ -1,0 +1,63 @@
+package entidades;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Chamada {
+		
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@OneToMany
+	private List<Aluno> listAluno;
+
+	private Date data;
+	
+	@OneToOne
+	private Turma turma;
+	
+	
+	public List<Aluno> getListAluno() {
+		return listAluno;
+	}
+
+	public void setListAluno(List<Aluno> listAluno) {
+		this.listAluno = listAluno;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "CODIGO: "+getId()+"\nTurma: "+getTurma()+"\nData: "+getData()+"\nLista Alunos ||\n"+listAluno.toString()+"";
+	}
+	
+	
+}

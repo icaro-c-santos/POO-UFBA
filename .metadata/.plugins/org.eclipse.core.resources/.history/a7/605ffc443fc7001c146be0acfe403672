@@ -1,0 +1,10 @@
+package entidades;
+
+public class Disciplina {
+	
+	
+	private Long codigo;
+	private String nome;
+	private String descricao;
+	
+}

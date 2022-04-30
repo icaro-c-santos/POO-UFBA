@@ -1,0 +1,4 @@
+module aplicacao {
+	requires javafx.controls;
+	opens aplicacao;
+}

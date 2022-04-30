@@ -1,0 +1,8 @@
+package entidades;
+
+public class Professor {
+	
+	Long id;
+	String nome;
+	
+}
