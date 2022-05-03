@@ -48,7 +48,7 @@ public class Aluno extends Pessoa{
 	
 	@Override
 	public String toString() {
-		return "Nome: "+getNome()+"\n Nascimento: "+getNascimento()+"\nCpf: "+getCpf()+"\nEmail: "+getEmail() +"\n Matricula: "+getMatricula()+"\n";
+		return "Nome: "+getNome()+"\nNascimento: "+getNascimento()+"\nCpf: "+getCpf()+"\nEmail: "+getEmail() +"\nMatricula: "+getMatricula()+"\n";
 	}
 
 }

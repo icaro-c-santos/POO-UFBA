@@ -1,0 +1,102 @@
+package aplicacao;
+
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder.In;
+
+import DAOs.Dao_Aluno;
+import DAOs.Dao_Disciplina;
+import DAOs.Dao_Professor;
+import DAOs.Dao_Turma;
+import entidades.Aluno;
+import entidades.Chamada;
+import entidades.Disciplina;
+import entidades.Professor;
+import entidades.Turma;
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+
+public class main extends Application{
+	
+	
+	static void  n() {
+			System.out.println("LA");
+	}
+	
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+			
+		
+	
+	        Button a = new Button("CADASTRAR ALUNO");
+		    Button b = new Button("VER ALUNOS!");
+		    	
+		    a.setOnAction( n -> {
+		        System.out.println("la");
+		        
+		        Button enviar = new Button("CADASTRAR ALUNO");
+			    TextField nome  = new  TextField("NOME");
+			    TextField idade  = new  TextField("idade");
+			    TextField cpf  = new  TextField("cpf");
+			    TextField email  = new  TextField("email");
+		        VBox box = new VBox();
+			    box.setAlignment(Pos.CENTER);
+			    box.setSpacing(20);
+				box.getChildren().addAll(nome,idade,cpf,email,enviar);
+				
+				Scene cenaUnica = new Scene(box);
+				primaryStage.setWidth(400);
+				primaryStage.setHeight(400);
+				primaryStage.setScene(cenaUnica);
+			    primaryStage.show();
+		        
+		        
+		        
+		    });
+		    
+			HBox box = new HBox();
+		    box.setAlignment(Pos.CENTER);
+		    box.setSpacing(20);
+			box.getChildren().add(a);
+			box.getChildren().add(b);
+			Scene cenaUnica = new Scene(box);
+			primaryStage.setWidth(400);
+			primaryStage.setHeight(400);
+			primaryStage.setScene(cenaUnica);
+		    primaryStage.show();
+			
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+			
+		launch(args);
+		
+	}
+
+	
+
+}
