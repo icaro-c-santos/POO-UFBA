@@ -7342,3 +7342,7 @@ java.io.FileNotFoundException: C:\Users\Icarus\.m2\repository\org\jvnet\staxex\s
 2022-05-03 01:24:57,808 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2022-05-03 01:24:57,810 [Worker-36: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-05-03 01:24:57,810 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\Nova pasta (2)\POO\com.sistema-escolar2\src\test\resources
+2022-05-03 01:25:24,947 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-05-03 01:25:24,948 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-03 01:25:24,949 [Worker-32: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-05-03 01:25:24,950 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\Nova pasta (2)\POO\com.sistema-escolar2\src\test\resources
