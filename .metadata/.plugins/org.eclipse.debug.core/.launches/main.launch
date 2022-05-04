@@ -15,5 +15,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="com.sistema-escolar2"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="com.sistema-escolar2"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="--module-path &quot;C:\Users\Icarus\Desktop\ALGEBRA\openjfx-18.0.1_windows-x64_bin-sdk\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="--module-path &quot;C:\Users\Icarus\Desktop\Nova pasta (2)\POO\openjfx-18.0.1_windows-x64_bin-sdk\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml"/>
 </launchConfiguration>
