@@ -1,0 +1,154 @@
+package Telas;
+
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.text.ParseException;
+
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.text.MaskFormatter;
+
+	@SuppressWarnings("serial")
+	public class Tela_Diretor_aluno extends JFrame {
+
+		private JTextField textFieldNome;
+		private JTextField textField_1;
+		private JTextField txtTeste;
+		
+		public Tela_Diretor_aluno() {
+			setBounds(100, 100, 776, 596);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			getContentPane().setLayout(null);
+			
+			JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane_1.setBounds(10, 36, 744, 525);
+			tabbedPane_1.setToolTipText("Tex");
+			getContentPane().add(tabbedPane_1);
+			
+			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane.setToolTipText("");
+			tabbedPane_1.addTab("ALUNOS", null, tabbedPane, null);
+			
+			JPanel panel = new JPanel();
+			tabbedPane.addTab("New tab", null, panel, null);
+			tabbedPane.setBackgroundAt(0, SystemColor.activeCaption);
+			panel.setLayout(null);
+			
+			JPanel panel_1 = new JPanel();
+			tabbedPane.addTab("New tab", null, panel_1, null);
+			
+			JTabbedPane tabbedPane_7 = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane_1.addTab("New tab", null, tabbedPane_7, null);
+			
+			JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane_1.addTab("PROFESSORES", null, tabbedPane_2, null);
+			
+			JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane_1.addTab("TURMAS", null, tabbedPane_3, null);
+			
+			JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane_1.addTab("DISCIPLINAS", null, tabbedPane_4, null);
+			
+			textFieldNome = new JTextField();
+			textFieldNome.setBounds(297, 121, 251, 24);
+			getContentPane().add(textFieldNome);
+			textFieldNome.setColumns(10);
+			
+			JLabel lblNewLabel = new JLabel("NOME COMPLETO:");
+			lblNewLabel.setBounds(157, 122, 130, 19);
+			lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+			getContentPane().add(lblNewLabel);
+			
+			JLabel lblDataDeNascimento = new JLabel("DATA DE NASCIMENTO:");
+			lblDataDeNascimento.setBounds(116, 163, 171, 19);
+			lblDataDeNascimento.setFont(new Font("Tahoma", Font.BOLD, 14));
+			getContentPane().add(lblDataDeNascimento);
+			
+			
+			MaskFormatter data = null;
+			try {
+				data = new MaskFormatter("##");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+			MaskFormatter dataAno = null;
+			try {
+				dataAno = new MaskFormatter("####");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			MaskFormatter maskCpf = null;
+			try {
+				maskCpf = new MaskFormatter("###.###.###-##");
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			
+			
+			JTextField textFieldDataDia = new JFormattedTextField(data);
+			textFieldDataDia.setBounds(331, 162, 36, 24);
+			textFieldDataDia.setToolTipText("DIA");
+			getContentPane().add(textFieldDataDia);
+			
+			JButton btnNewButton_1 = new JButton("New buttonaaaa");
+			btnNewButton_1.setBounds(0, 0, 0, 0);
+			getContentPane().add(btnNewButton_1);
+			
+			JTextField textFieldDataMes = new JFormattedTextField(data);
+			textFieldDataMes.setBounds(377, 162, 36, 24);
+			textFieldDataMes.setToolTipText("MES");
+			getContentPane().add(textFieldDataMes);
+			
+			JTextField textFieldDataAno = new JFormattedTextField(dataAno);
+			textFieldDataAno.setBounds(422, 162, 68, 24);
+			textFieldDataAno.setToolTipText("ANO");
+			getContentPane().add(textFieldDataAno);
+			
+			JTextField textFieldCpf = new JFormattedTextField(maskCpf);
+			textFieldCpf.setBounds(331, 204, 171, 24);
+			textFieldCpf.setHorizontalAlignment(SwingConstants.CENTER);
+			textFieldCpf.setColumns(10);
+			getContentPane().add(textFieldCpf);
+			
+			JLabel lblCpf = new JLabel("CPF:");
+			lblCpf.setBounds(239, 205, 48, 19);
+			lblCpf.setFont(new Font("Tahoma", Font.BOLD, 14));
+			getContentPane().add(lblCpf);
+			
+			textField_1 = new JTextField();
+			textField_1.setBounds(297, 246, 251, 24);
+			textField_1.setColumns(10);
+			getContentPane().add(textField_1);
+			
+			JLabel lblEmail = new JLabel("EMAIL:");
+			lblEmail.setBounds(236, 247, 51, 19);
+			lblEmail.setFont(new Font("Tahoma", Font.BOLD, 14));
+			getContentPane().add(lblEmail);
+			
+			JButton btnNewButton = new JButton("CADASTRAR ALUNO");
+			btnNewButton.setBounds(331, 308, 196, 23);
+			getContentPane().add(btnNewButton);
+			
+			txtTeste = new JTextField();
+			txtTeste.setBounds(131, 366, 106, 20);
+			txtTeste.setText("teste");
+			getContentPane().add(txtTeste);
+			txtTeste.setColumns(10);
+			
+			JButton btnNewButton_2 = new JButton("New button");
+			btnNewButton_2.setBounds(76, 235, 189, 79);
+			getContentPane().add(btnNewButton_2);
+			
+
+		}
+	
+
+}
+	

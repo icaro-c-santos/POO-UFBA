@@ -1,0 +1,137 @@
+package Telas;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import DAOs.Dao_Aluno;
+import DAOs.Dao_Turma;
+import Utilitarios.Utilitario;
+import entidades.Aluno;
+import entidades.Disciplina;
+
+@SuppressWarnings("serial")
+public class Tela_Diretor_Disciplina_Consulta extends JFrame {
+
+	private JTextField consultaTexto;
+	private Dao_Aluno dao_aluno = new Dao_Aluno();
+	private Utilitario utilitario = new Utilitario();
+	
+	public void alert(String mensagem) {
+		JOptionPane.showMessageDialog(null,mensagem);
+	
+	}
+	public void sucess(String mensagem) {
+		JOptionPane.showInternalMessageDialog(null, mensagem);
+	}
+	
+	
+	public JScrollPane getLista(List<Disciplina> listDisciplinas) {	
+		int TAM = listDisciplinas.size();
+		String[][]  lista = new String [TAM][3];
+		Disciplina disciplina = null;
+		for(int i=0; i<TAM;i++) {
+			disciplina = listDisciplinas.get(i);
+			lista[i][0]=""+disciplina.getCodigo();
+			lista[i][0]=disciplina.getNome();
+			lista[i][0]=disciplina.getDescricao();
+		}
+		
+		String [] dados = {"CODIGO","NOME","DESCRIÇÃO"};
+		JTable tabela = new JTable (lista,dados);
+		
+		tabela.getColumnModel().getColumn(0).setPreferredWidth(300);
+		tabela.getColumnModel().getColumn(1).setPreferredWidth(80);
+		tabela.getColumnModel().getColumn(2).setPreferredWidth(300);
+		tabela.setEnabled(false);
+		JScrollPane scroll_table = new JScrollPane(tabela);           // add table to scroll panel
+		scroll_table.setBounds(5, 100, 700, 350);
+		scroll_table.setVisible(true);
+		return scroll_table;
+	}
+
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public JPanel getPanel() {
+		
+		final JPanel panel = new JPanel();
+		panel.setLayout(null);
+		
+		final JComboBox opcaoBusca = new JComboBox();
+		opcaoBusca.setBounds(328, 34, 149, 25);
+		opcaoBusca.setModel(new DefaultComboBoxModel(new String[] {"NOME", "CODIGO"}));
+		panel.add(opcaoBusca);
+		
+		consultaTexto = new JTextField();
+		consultaTexto.setBounds(10, 34, 265, 25);
+		panel.add(consultaTexto);
+		consultaTexto.setColumns(10);
+		
+		
+		JButton buscarDisciplina = new JButton("BUSCAR DISCIPLINA");
+		buscarDisciplina.setBounds(516, 34, 190, 25);
+		buscarDisciplina.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+				
+				try {
+					
+				Integer opcao = opcaoBusca.getSelectedIndex();	
+				String valorConsulta = consultaTexto.getText();
+				Dao_Turma dao_turma = new Dao_Turma();
+				if(opcao == 0) {
+					try {
+						panel.remove(3);
+						List<Tu> listAluno= dao_aluno.getAlunoNome(valorConsulta);	
+		      			panel.add(getLista(listAluno));
+						repaint();
+						alert("ERRO NO SISTEMA"+e2.getMessage());
+					}catch (Exception e2) {
+						alert("ERRO NO SISTEMA!");
+					}
+				
+				
+				}else if(opcao ==1){
+					
+				
+				}	
+				
+					
+				
+					try {
+						
+					}
+				break;
+				
+				case 1:
+				
+					try {
+						
+					
+				break;
+					
+
+				default:
+					break;
+				}
+				
+				}catch (Exception e2) {
+						alert("ERRO NO SISTEMA!"+e2.getMessage());
+						System.exit(-1);
+				}
+			}
+		});
+		panel.add(buscarAluno);
+		
+		return panel;
+	}	
+
+}

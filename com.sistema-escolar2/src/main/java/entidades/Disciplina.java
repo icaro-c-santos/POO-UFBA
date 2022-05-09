@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import DAOs.BD;
+
 @Entity
 public class Disciplina {
 	
@@ -13,14 +15,21 @@ public class Disciplina {
 	private Long codigo;
 	private String nome;
 	private String descricao;
-	
-	public Disciplina() {
-		
+	private boolean status;
+	public boolean isStatus() {
+		return status;
 	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public Disciplina() {
+		this.status = true;
+	}
+
 	public Disciplina(String nome, String descricao) {
-		super();
 		this.nome = nome;
 		this.descricao = descricao;
+		this.status = true;
 	}
 	public String getNome() {
 		return nome;
@@ -53,7 +62,7 @@ public class Disciplina {
 	@Override
 	public String toString() {
 		
-		return "Codigo: "+getCodigo()+"\nNome: "+getNome()+"\nDescrição: "+getDescricao()+"";
+		return "Codigo: "+getCodigo()+"\nNome: "+getNome()+"\nDescriÃ§ao: "+getDescricao()+"";
 	}
 	
 	

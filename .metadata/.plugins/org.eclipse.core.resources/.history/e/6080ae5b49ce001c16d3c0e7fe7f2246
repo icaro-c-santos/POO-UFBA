@@ -1,0 +1,41 @@
+package aplicacao;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import DAOs.Dao_Aluno;
+import Telas.Tela_Inicial_Diretor;
+import entidades.Aluno;
+import net.bytebuddy.asm.Advice.Local;
+
+public class main{
+
+
+
+
+	public static void main(String[] args) {
+	  
+		LocalDate nascimento = LocalDate.of(2020, 12, 04);
+		String dia = ""+nascimento.getDayOfMonth();
+		String mes = ""+nascimento.getMonthValue();
+		String ano = ""+nascimento.getYear();
+		String data = ano+"-"+mes+"-"+dia;
+		LocalDate ld1 = LocalDate.parse(data, DateTimeFormatter.ISO_DATE);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        System.out.println(ld1);
+
+		
+		
+       
+	//Tela_Inicial_Diretor.start_tela_diretor(null);
+		
+		
+	}
+	
+	
+	
+	
+
+}

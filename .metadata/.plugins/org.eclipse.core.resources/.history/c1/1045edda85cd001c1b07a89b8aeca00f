@@ -1,0 +1,57 @@
+package Telas;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
+@SuppressWarnings("serial")
+public class Tela_Inicial_Diretor extends JFrame {
+	private JPanel contentPane;
+
+	private static JFrame frame; 
+	public static void start_tela_diretor(String[] args) {	
+			frame = new Tela_Inicial_Diretor();
+			frame.setVisible(true);
+	}
+	
+	
+	
+
+	
+
+	public Tela_Inicial_Diretor() {
+		
+		setBounds(100, 100, 776, 596);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(10, 36, 744, 525);
+		tabbedPane.setToolTipText("Tex");
+		getContentPane().add(tabbedPane);
+		
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("ALUNOS", null, tabbedPane_1, null);
+		
+		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("TURMAS", null, tabbedPane_3, null);
+		
+		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("DISCIPLINAS", null, tabbedPane_4, null);
+		
+	
+		Tela_Diretor_Aluno_Consulta telaConsulta = new Tela_Diretor_Aluno_Consulta();
+		JPanel panel_1 = telaConsulta.getPanel();
+		tabbedPane_1.addTab("CONSULTAR ALUNO", null, panel_1, null);
+		
+		Tela_Diretor_Aluno_Cadastro telaCadastro = new Tela_Diretor_Aluno_Cadastro();
+		JPanel panel_2 = telaCadastro.getPanel();
+		tabbedPane_1.addTab("CADASTRAR ALUNO", null, panel_2, null);
+		
+		JPanel panel_4 = new JPanel();
+		tabbedPane_1.addTab("New tab", null, panel_4, null);
+		
+
+	}
+}

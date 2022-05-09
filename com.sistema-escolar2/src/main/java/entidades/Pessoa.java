@@ -1,6 +1,5 @@
 package entidades;
 
-import java.util.Date;
 import javax.persistence.MappedSuperclass;
 
 
@@ -8,19 +7,19 @@ import javax.persistence.MappedSuperclass;
 public class Pessoa {
 	
 	private String nome;
-	private Date nascimento;
+	private String nascimento;
 	private String cpf;
 	private String email;
 	
 	public Pessoa(){
 	}
 	
-	public Pessoa(String nome, Date nascimento, String cpf, String email) {
+	public Pessoa(String nome, String nascimento, String cpf, String email) {
 		super();
 		this.nome = nome;
-		this.nascimento = nascimento;
 		this.cpf = cpf;
 		this.email = email;
+		this.nascimento = nascimento;
 	}
 	
 	public String getNome() {
@@ -29,11 +28,12 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getNascimento() {
-		return nascimento;
+	public String getNascimento()  {
+		return this.nascimento;	
 	}
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
+	
+	public void setNascimento(String data) {
+		this.nascimento = data;
 	}
 	public String getCpf() {
 		return cpf;

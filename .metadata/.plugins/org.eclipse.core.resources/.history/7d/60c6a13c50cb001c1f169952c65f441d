@@ -1,0 +1,14 @@
+package Telas;
+
+import javax.swing.JPanel;
+
+public class re extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public re() {
+
+	}
+
+}

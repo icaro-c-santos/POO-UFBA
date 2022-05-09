@@ -1,17 +1,17 @@
 package entidades;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+
+import DAOs.BD;
 
 @Entity
 public class Aluno extends Pessoa{
+	
+	
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,13 +20,14 @@ public class Aluno extends Pessoa{
 		
 	}
 	
-	public Aluno(String nome, Date nascimento, String cpf,String email) {
+	public Aluno(String nome, String nascimento, String cpf,String email) {
 		super(nome, nascimento, cpf,email);
 	}
 	
 	public Long getMatricula() {
 		return matricula;
 	}
+	
 	
 	
 	
@@ -49,6 +50,11 @@ public class Aluno extends Pessoa{
 	@Override
 	public String toString() {
 		return "Nome: "+getNome()+"\nNascimento: "+getNascimento()+"\nCpf: "+getCpf()+"\nEmail: "+getEmail() +"\nMatricula: "+getMatricula()+"\n";
+	}
+	
+	public String toStringDisplay() {
+		return "|| Nome: "+getNome()+"     ||Nascimento: "+getNascimento()+"      ||Cpf: "+getCpf()+" ||Email: "+getEmail() +" ||Matricula: "+getMatricula()+"";
+
 	}
 
 }

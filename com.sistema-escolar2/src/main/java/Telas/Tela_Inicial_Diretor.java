@@ -1,0 +1,128 @@
+package Telas;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
+@SuppressWarnings("serial")
+public class Tela_Inicial_Diretor extends JFrame {
+
+	private static JFrame frame; 
+	public static void start_tela_diretor(String[] args) {	
+			frame = new Tela_Inicial_Diretor();
+			frame.setResizable(false);
+			frame.setVisible(true);
+			
+	}
+	
+	public void alert(String mensagem) {
+		JOptionPane.showMessageDialog(null,mensagem);
+	
+	}
+	public void sucess(String mensagem) {
+		JOptionPane.showInternalMessageDialog(null, mensagem);
+	}
+	
+	
+	
+
+	public Tela_Inicial_Diretor() {
+		
+		setBounds(100, 100, 776, 596);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
+	
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(10, 36, 744, 525);
+		tabbedPane.setToolTipText("Tex");
+		getContentPane().add(tabbedPane);
+		
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("ALUNOS", null, tabbedPane_1, null);
+		
+		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("PROFESSORES", null, tabbedPane_2, null);
+		
+		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("TURMAS", null, tabbedPane_3, null);
+		
+		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("DISCIPLINAS", null, tabbedPane_4, null);
+		
+	
+	    Tela_Diretor_Aluno_Consulta telaConsultaAluno = new Tela_Diretor_Aluno_Consulta();
+		JPanel panel_1 = telaConsultaAluno.getPanel();
+		tabbedPane_1.addTab("CONSULTAR ALUNO", null, panel_1, null);
+		
+		Tela_Diretor_Aluno_Cadastro telaCadastroAluno = new Tela_Diretor_Aluno_Cadastro();
+		JPanel panel_2 = telaCadastroAluno.getPanel();
+		tabbedPane_1.addTab("CADASTRAR ALUNO", null, panel_2, null);
+		
+		Tela_Diretor_Aluno_Excluir telaExcluirAluno = new Tela_Diretor_Aluno_Excluir();
+		JPanel panel_3 = telaExcluirAluno.getPanel();
+		tabbedPane_1.addTab("EXCLUIR ALUNO", null, panel_3, null);
+		
+
+		Tela_Diretor_Aluno_Alterar telaAlterarAluno = new Tela_Diretor_Aluno_Alterar();
+		JPanel panel_4 = telaAlterarAluno.getPanel();
+		tabbedPane_1.addTab("ALTERAR ALUNO", null, panel_4, null);
+		
+		Tela_Diretor_Disciplina_Consulta tela_Diretor_Disciplina_Consulta = new Tela_Diretor_Disciplina_Consulta();
+		JPanel panel_5 = tela_Diretor_Disciplina_Consulta.getPanel();
+		tabbedPane_4.addTab("CONSULTAR DISCIPLINA", null, panel_5, null);
+		
+		Tela_Diretor_Disciplina_Cadastro telaCadastroDisciplina = new  Tela_Diretor_Disciplina_Cadastro();
+		JPanel panel_6 = telaCadastroDisciplina.getPanel();
+		tabbedPane_4.addTab("CADASTRAR DISCIPLINA", null, panel_6, null);
+		
+		Tela_Diretor_Disciplina_Alterar telaAlterarDisciplina = new Tela_Diretor_Disciplina_Alterar();
+		JPanel panel_7 = telaAlterarDisciplina.getPanel();
+		tabbedPane_4.addTab("ALTERAR DISCIPLINA", null, panel_7, null);
+		
+		Tela_Diretor_Disciplina_Excluir telaExcluirDisciplina = new Tela_Diretor_Disciplina_Excluir();
+		JPanel panel_8 = telaExcluirDisciplina.getPanel();
+		tabbedPane_4.addTab("EXCLUIR DISCIPLINA", null, panel_8, null);
+		
+		
+		Tela_Diretor_Professor_Consulta telaConsultaProfessor = new Tela_Diretor_Professor_Consulta();
+		JPanel panel_9 = telaConsultaProfessor.getPanel();
+		tabbedPane_2.addTab("CONSULTAR PROFESSOR", null, panel_9, null);
+		
+		
+		Tela_Diretor_Professor_Cadastro telaCadastroProfessor = new Tela_Diretor_Professor_Cadastro();
+		JPanel panel_10 = telaCadastroProfessor.getPanel();
+		tabbedPane_2.addTab("CADASTRAR PROFESSOR", null, panel_10, null);
+		
+		
+		Tela_Diretor_Professor_Alterar telaAlterarProfessor = new Tela_Diretor_Professor_Alterar();
+		JPanel panel_11 = telaAlterarProfessor.getPanel();
+		tabbedPane_2.addTab("ALTERAR PROFESSOR", null, panel_11, null);
+		
+		
+		Tela_Diretor_Professor_Excluir telaExcluirProfessor = new Tela_Diretor_Professor_Excluir();
+		JPanel panel_12 = telaExcluirProfessor.getPanel();
+		tabbedPane_2.addTab("EXCLUIR PROFESSOR", null, panel_12, null);
+		
+		
+		Tela_Diretor_Turma_Consultar telaTurmaConsultar = new Tela_Diretor_Turma_Consultar();
+		JPanel panel_13 = telaTurmaConsultar.getPanel();
+		tabbedPane_3.addTab("CONSULTAR TURMA",null,panel_13,null);
+		
+		Tela_Diretor_Turma_Cadastro telaTurmaCadastro = new Tela_Diretor_Turma_Cadastro();
+		JPanel panel_14 = telaTurmaCadastro.getPanel();
+		tabbedPane_3.addTab("CADASTRAR TURMA", null, panel_14, null);
+		
+		Tela_Diretor_Turma_Alterar telaTurmaAlterar = new Tela_Diretor_Turma_Alterar();
+		JPanel panel_15 = telaTurmaAlterar.getPanel();
+		tabbedPane_3.addTab("ALTERAR TURMA", null, panel_15, null);
+		
+
+		Tela_Diretor_Turma_Excluir telaTurmaExcluir = new Tela_Diretor_Turma_Excluir();
+		JPanel panel_16 = telaTurmaExcluir.getPanel();
+		tabbedPane_3.addTab("EXCLUIR TURMA", null, panel_16, null);
+		
+
+	}
+}

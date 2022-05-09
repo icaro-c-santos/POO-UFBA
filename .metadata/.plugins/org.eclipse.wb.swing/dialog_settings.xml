@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.font.FontDialog">
+		<item key="x" value="684"/>
+		<item key="y" value="242"/>
+		<item key="width" value="552"/>
+		<item key="height" value="646"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.icon.IconPropertyEditor$ImageDialog">
+		<item key="x" value="393"/>
+		<item key="y" value="201"/>
+		<item key="width" value="1133"/>
+		<item key="height" value="728"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.border.BorderDialog">
+		<item key="x" value="298"/>
+		<item key="y" value="268"/>
+		<item key="width" value="614"/>
+		<item key="height" value="569"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.combo.ComboBoxModelDialog">
+		<item key="x" value="658"/>
+		<item key="y" value="335"/>
+		<item key="width" value="604"/>
+		<item key="height" value="460"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.utils.ui.dialogs.StringsDialog">
+		<item key="x" value="736"/>
+		<item key="y" value="363"/>
+		<item key="width" value="447"/>
+		<item key="height" value="403"/>
+	</section>
+</section>

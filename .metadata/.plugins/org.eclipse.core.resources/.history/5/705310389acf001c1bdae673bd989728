@@ -1,0 +1,12 @@
+package DAOs;
+
+import java.util.List;
+
+import entidades.Turma;
+
+public class BD {
+
+	
+	
+	private static List<Turma> BancoTurma();
+}

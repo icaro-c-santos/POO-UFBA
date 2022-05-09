@@ -1,24 +1,39 @@
 package entidades;
 
-import java.util.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Cascade;
+
+import DAOs.BD;
+
 @Entity
+
 public class Professor extends Pessoa{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+	private boolean status;
 	public Professor() {
+		this.status = true;
 	}
 	
-	public Professor(String nome, Date nascimento, String cpf,String email) {
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public Professor(String nome,String nascimento, String cpf,String email) {
 		super(nome, nascimento, cpf,email);
+		this.status = true;
 	}
 
 	public Long getCodigo() {

@@ -1,0 +1,29 @@
+package aplicacao;
+
+import Telas.Tela_Inicial_Diretor;
+
+public class main{
+
+
+
+
+	public static void main(String[] args) {
+	 
+		String a = "";
+		System.out.println("NULL?:"+(a==null));
+		System.out.println("NULL?:"+(a==""));
+		System.out.println("VALOR"+a);
+		Long.parseLong(a);
+	
+		
+       
+	//Tela_Inicial_Diretor.start_tela_diretor(null);
+		
+		
+	}
+	
+	
+	
+	
+
+}

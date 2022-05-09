@@ -1,0 +1,9 @@
+package Telas;
+
+import javax.swing.JFrame;
+
+public class Tela_Diretor_Disciplina_Excluir extends JFrame {
+
+	
+
+}

@@ -1,15 +1,15 @@
 package DAOs;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-import entidades.Aluno;
-import entidades.Disciplina;
 
+import entidades.Professor;
 import entidades.Turma;
 
 public class Dao_Turma {
@@ -21,6 +21,7 @@ public class Dao_Turma {
 	
 	public Long saveTurma(Turma turma){
 		
+		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -31,28 +32,25 @@ public class Dao_Turma {
 	
 	}
 	
-	public boolean updateTurma(Long codigo,Turma newTurma){
+	
+	public boolean updateTurma(Turma newTurma){
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		Turma turma = em.find(Turma.class, codigo);
+		Turma turma = em.find(Turma.class, newTurma.getId());
 		if(turma==null) { return false;}
-		 if(newTurma.getDisciplina()!=null) { 
-			 turma.setDisciplina(newTurma.getDisciplina());
-		 }
-
-		 if(newTurma.getProfessor()!= null) {
-			 turma.setProfessor(newTurma.getProfessor());
-		 }
-		 if(newTurma.getListAluno() != null) {
-			turma.setListAluno(newTurma.getListAluno());
-		 }
+		
+		turma.setDisciplina(newTurma.getDisciplina());
+		turma.setProfessor(newTurma.getProfessor());
+		turma.setListAluno(newTurma.getListAluno());
 		 em.merge(turma);
 		 em.getTransaction().commit();
 	     em.close();
 	     return true;
 }
+	
+	
 	
 	public List<Turma> getAll(){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
@@ -62,20 +60,20 @@ public class Dao_Turma {
 	    return list;
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Turma> getTurmaDisciplina(Disciplina disciplina){
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
-		EntityManager em = emf.createEntityManager();
-		List<Turma> list = em.createQuery("SELECT c FROM Turma c WHERE c.disciplina LIKE :Cdisciplina").setParameter("Cdisciplina", disciplina).getResultList();
-	    return list;
+
+	public List<Turma> getTurmaDisciplina(Long codigoDisciplina){
+		Stream<Turma>  bv = this.getAll().stream();
+		return stream.filter(p -> p.contemDisciplina(codigoDisciplina)).collect(Collectors.toList());
 	}
 	
-	@SuppressWarnings("unchecked")
-	public List<Turma> getTurmaAlnuo(String matricula){
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
-		EntityManager em = emf.createEntityManager();
-		List<Turma> list = em.createQuery("SELECT c FROM Turma c WHERE c.aluno.matricula LIKE :Cparamet").setParameter("Cparamet",matricula).getResultList();
-	    return list;
+	public List<Turma> getTurmaProfessor(Long codigoProfessor){
+		Stream<Turma> stream = this.getAll().stream();
+		return stream.filter(p -> p.contemProfessor(codigoProfessor)).collect(Collectors.toList());
+	}
+	
+
+	public List<Turma> getTurmaAlnuo(Long matriculaAlubo){
+		return this.getAll().stream().filter(turma -> turma.contemAluno(matriculaAlubo)).collect(Collectors.toList());
 	}
 	
 	public Turma getTurmaCodigo(Long codigo){
@@ -101,6 +99,16 @@ public class Dao_Turma {
 		em.getTransaction().commit();
 	    em.close();
 		return false;
+	}
+	
+	
+	public void refreshTurma() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		getAll().forEach(p -> em.refresh(p));
+	  em.getTransaction().commit();
+	    em.close();
 	}
 	
 	

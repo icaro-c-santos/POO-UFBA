@@ -1,0 +1,19 @@
+package DAOs;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import entidades.Aluno;
+import entidades.Disciplina;
+import entidades.Professor;
+import entidades.Turma;
+
+
+
+public class BD {
+	private static List<Turma> bdTurma = new ArrayList<>();
+	private static List<Aluno> bdAluno = new ArrayList<Aluno>();
+	private static List<Disciplina> bdDisciplina = new ArrayList<>();
+	private static List<Professor> bdProfessors = new ArrayList<>();
+	
+}

@@ -1,0 +1,35 @@
+package DAOs;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateUtil {
+
+
+private static Configuration configurantion;
+
+/**
+ * 
+ * @return
+ */
+public static SessionFactory getSessionFactory() {
+    return sessionFactory;
+}
+
+/**
+ * 
+ */
+public static void initConfiguration() {
+    try {
+        configurantion = new Configuration().configure("hibernate.cfg.xml");
+        StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
+        sb.applySettings(configurantion.getProperties());
+        StandardServiceRegistry standardServiceRegistry = sb.build();
+        sessionFactory = configurantion
+                .buildSessionFactory(standardServiceRegistry);
+    } catch (Exception e) {
+        System.err.println("Initial SessionFactory creation failed" + e);
+        throw new ExceptionInInitializerError(e);
+    }
+}
+	
+}

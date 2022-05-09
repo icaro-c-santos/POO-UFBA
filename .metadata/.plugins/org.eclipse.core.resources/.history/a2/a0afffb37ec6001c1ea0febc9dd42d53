@@ -1,4 +1,0 @@
-module default {
-   requires java.
-   exports ${nome do pacote};
-}

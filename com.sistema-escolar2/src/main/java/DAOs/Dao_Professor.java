@@ -1,6 +1,6 @@
 package DAOs;
 
-import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import entidades.Professor;
+import entidades.Turma;
 
 
 public class Dao_Professor {
@@ -23,33 +24,23 @@ public class Dao_Professor {
 	    em.persist(professor);
 	    em.getTransaction().commit();
 	    em.close();
-	    return professor.getCodigo();
+	    return professor.getCodigo(); 
 	
 	}
 	
-	public boolean updateProfessor(Long codigo,String nome,Date datanascimento,String cpf){
+	public boolean updateProfessor(Professor professorParameter){
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		Professor professor = em.find(Professor.class, codigo);
+		Professor professor = em.find(Professor.class, professorParameter.getCodigo());
 		if(professor==null) { return false;}
 		 em.merge(professor);
-		 
-		 if(nome!=null) {
-			 professor.setNome(nome);
-		 }
-		 
-		 if(datanascimento!=null) {
-			 professor.setNascimento(datanascimento);
-		 }
-		 if(cpf!= null) {
-			 professor.setCpf(cpf);
-			 
-		 }
+		 professor.setNome(professorParameter.getNome());
+		 professor.setNascimento(professorParameter.getNascimento());
+		 professor.setCpf(professorParameter.getCpf());
 	     em.getTransaction().commit();
 	     em.close();
-	     
 	     return true;
 	
 }
@@ -66,7 +57,7 @@ public class Dao_Professor {
 	public List<Professor> getProfessorNome(String nome){
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
 		EntityManager em = emf.createEntityManager();
-		List<Professor> list = em.createQuery("SELECT c FROM Professor c WHERE c.nome LIKE :Cnome").setParameter("Cnome", nome).getResultList();
+		List<Professor> list = em.createQuery("SELECT c FROM Professor c WHERE c.nome LIKE :Cnome").setParameter("Cnome", "%"+nome+"%").getResultList();
 	    return list;
 	}
 	
@@ -90,13 +81,18 @@ public class Dao_Professor {
 		if(codigo == null){return false;}
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
 		EntityManager em = emf.createEntityManager();
-		em.getTransaction().begin();
+		Dao_Turma dao_turma = new Dao_Turma();
+		dao_turma.getAll().forEach(p->{
+			p.setProfessor(null);
+			dao_turma.updateTurma(p);
+		});
 		Professor professor = em.find(Professor.class,codigo);
+		em.getTransaction().begin();
+	
 		if(professor != null) {
 		    em.remove(professor);
 		    em.getTransaction().commit();
 		    em.close();
-		    return true;
 		}
 		em.getTransaction().commit();
 	    em.close();
