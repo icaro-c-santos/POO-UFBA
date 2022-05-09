@@ -1,0 +1,98 @@
+package Telas;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Tela_Diretor_Turma_AddExcluirAluno extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Tela_Diretor_Turma_AddExcluirAluno frame = new Tela_Diretor_Turma_AddExcluirAluno();
+					frame.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Tela_Diretor_Turma_AddExcluirAluno() {
+		setBounds(100, 100, 776, 596);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setLayout(null);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 78, 744, 472);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JTextArea textAluno = new JTextArea();
+		textAluno.setBounds(353, 110, 116, 27);
+		panel.add(textAluno);
+		
+		JLabel lbAluno = new JLabel("CODIGO ALUNO:");
+		lbAluno.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lbAluno.setBounds(211, 110, 131, 27);
+		panel.add(lbAluno);
+		
+		JLabel lblCodigoTurma = new JLabel("CODIGO TURMA:");
+		lblCodigoTurma.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCodigoTurma.setBounds(211, 165, 120, 27);
+		panel.add(lblCodigoTurma);
+		
+		JTextArea textTurma = new JTextArea();
+		textTurma.setBounds(353, 165, 116, 27);
+		panel.add(textTurma);
+		
+		JButton btnExcluir = new JButton("EXCLUIR ALUNO DA TURMA");
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnExcluir.setBounds(157, 269, 184, 23);
+		panel.add(btnExcluir);
+		
+		JButton btnAdicionar = new JButton("ADICIONAR ALUNO NA TURMA");
+		btnAdicionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				String codigoTurma = null;
+				String codigoAluno = null;
+				
+				codigoAluno = textAluno.getText();
+				codigoTurma = textTurma.getText();
+				
+				
+				
+			}
+		});
+		btnAdicionar.setBounds(388, 269, 184, 23);
+		panel.add(btnAdicionar);
+	}
+}

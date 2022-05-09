@@ -39,14 +39,19 @@ public class Tela_Diretor_Aluno_Consulta extends JFrame {
 		int TAM = listAluno.size();
 		String[][]  lista = new String [TAM][5];
 		Aluno aluno = null;
-		for(int i=0; i<TAM;i++) {
-			aluno = listAluno.get(i);
-			lista[i][0]=aluno.getNome();
-			lista[i][1]= ""+aluno.getMatricula();
-			lista[i][2]= ""+aluno.getNascimento();				
-			lista[i][3]= ""+aluno.getCpf();
-			lista[i][4]= ""+aluno.getEmail();
+		if(listAluno.isEmpty()) {
+			
+		}else {
+			for(int i=0; i<TAM;i++) {
+				aluno = listAluno.get(i);
+				lista[i][0]=aluno.getNome();
+				lista[i][1]= ""+aluno.getMatricula();
+				lista[i][2]= ""+aluno.getNascimento();				
+				lista[i][3]= ""+aluno.getCpf();
+				lista[i][4]= ""+aluno.getEmail();
+			}
 		}
+		
 		
 		String [] dados = {"NOME","MATRICULA","NASCIMENTO","CPF","EMAIL"};
 		JTable tabela = new JTable (lista,dados);
@@ -121,7 +126,7 @@ public class Tela_Diretor_Aluno_Consulta extends JFrame {
 					try {
 						if(utilitario.validarCpf(valorConsulta)) {
 							List<Aluno> listAluno= dao_aluno.getAlunoCpf(valorConsulta);	
-			      			panel.add(getLista(listAluno));
+							panel.add(getLista(listAluno));
 							repaint();
 						}else {
 							alert("CPF INVALIDO");

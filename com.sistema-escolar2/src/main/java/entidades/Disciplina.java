@@ -1,17 +1,9 @@
 package entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import DAOs.BD;
 
-@Entity
 public class Disciplina {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private String nome;
 	private String descricao;
@@ -24,12 +16,14 @@ public class Disciplina {
 	}
 	public Disciplina() {
 		this.status = true;
+		this.codigo = BD.gerarIdDisciplina();
 	}
 
 	public Disciplina(String nome, String descricao) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.status = true;
+		this.codigo = BD.gerarIdDisciplina();
 	}
 	public String getNome() {
 		return nome;

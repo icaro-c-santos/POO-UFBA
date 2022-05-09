@@ -1,37 +1,24 @@
 package entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import DAOs.BD;
 
-@Entity
 public class Aluno extends Pessoa{
 	
-	
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long matricula;
 	public Aluno(){
-		
+		this.matricula = BD.gerarIdAluno();
 	}
 	
 	public Aluno(String nome, String nascimento, String cpf,String email) {
 		super(nome, nascimento, cpf,email);
+		this.matricula = BD.gerarIdAluno();
 	}
 	
 	public Long getMatricula() {
 		return matricula;
 	}
 	
-	
-	
-	
-	@Override
 	public boolean equals(Object obj) {
         if(this == obj) return true;
         if(obj == null || getClass() != obj.getClass()) return false;
@@ -42,12 +29,10 @@ public class Aluno extends Pessoa{
         return false;
     }
 	
-	@Override
 	public int hashCode() {
 		return this.getCpf().hashCode();
 	}
 	
-	@Override
 	public String toString() {
 		return "Nome: "+getNome()+"\nNascimento: "+getNascimento()+"\nCpf: "+getCpf()+"\nEmail: "+getEmail() +"\nMatricula: "+getMatricula()+"\n";
 	}

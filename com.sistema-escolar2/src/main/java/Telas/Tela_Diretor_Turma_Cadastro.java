@@ -73,7 +73,6 @@ public class Tela_Diretor_Turma_Cadastro {
 			@SuppressWarnings("unused")
 			public void actionPerformed(ActionEvent e) {
 				try {
-					System.out.println("ça");
 					List<String> msgErro = new ArrayList<String>();
 					String codigoDisciplina = textField.getText();
 					String codigoProfessor = textField_1.getText();

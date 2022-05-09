@@ -123,6 +123,8 @@ public class Tela_Inicial_Diretor extends JFrame {
 		JPanel panel_16 = telaTurmaExcluir.getPanel();
 		tabbedPane_3.addTab("EXCLUIR TURMA", null, panel_16, null);
 		
-
+		Tela_Diretor_Turma_AddExcluirAluno tela_AddExlcuir = new Tela_Diretor_Turma_AddExcluirAluno();
+		JPanel panel_17 = tela_AddExlcuir.getPanel();
+		tabbedPane_3.addTab("GERENCIAR TURMA", null, panel_17, null);
 	}
 }

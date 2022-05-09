@@ -12,10 +12,10 @@ import entidades.Turma;
 
 public class BD {
 	
-	 private static Long idAluno =0l;
-	private static Long idProfessor=0l;
-	 private static Long idTumra=0l;
-	private static Long idDisciplina=0l;
+	 private static Long idAluno =1l;
+	private static Long idProfessor=1l;
+	 private static Long idTumra=1l;
+	private static Long idDisciplina=1l;
 	 
 	public static Long gerarIdAluno() {
 		return idAluno++;

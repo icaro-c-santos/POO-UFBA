@@ -4,40 +4,27 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import DAOs.BD;
 
-@Entity
+
 public class Turma {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
-	
-	@OneToOne(cascade = { CascadeType.MERGE})
 	private Disciplina disciplina;
-	
-	@OneToOne(cascade = { CascadeType.MERGE})
 	private Professor professor;
-	
-	@OneToMany(cascade =  {CascadeType.ALL})
 	private Set<Aluno> listAluno = null;
 	
 	public Turma() {
-		
+		this.id = BD.gerarIdTurma();
 	}
 	
 	public Turma(Disciplina disciplina,Professor professor) {
 		this.disciplina = disciplina;
 		this.professor = professor;
 		this.listAluno = new HashSet<Aluno>();
+		this.id = BD.gerarIdTurma();
 	}
 	
 	public Disciplina getDisciplina() {
@@ -93,6 +80,11 @@ public class Turma {
 	public boolean addAluno(Aluno Aluno) {
 		return this.listAluno.add(Aluno);
 	}
+	
+	public boolean removAluno(Long matricula) {
+		this.listAluno.removeIf(p->p.getMatricula()==matricula);
+		return true;
+	}
 
 	public Long getId() {
 		return id;
@@ -113,13 +105,13 @@ public class Turma {
 				professor = this.getProfessor().getNome();
 			}
 		}
-		
+	
 		if(this.getDisciplina() != null) {
 			if(this.getDisciplina().getCodigo() !=null) {
-				cdProfessor = ""+this.getDisciplina().getCodigo();
+				cdDisciplina = ""+this.getDisciplina().getCodigo();
 			}
 			if(this.getDisciplina().getNome()!=null) {
-				professor = this.getDisciplina().getNome();
+				disciplina = this.getDisciplina().getNome();
 			}
 		}
 		

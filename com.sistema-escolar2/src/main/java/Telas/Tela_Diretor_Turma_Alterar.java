@@ -82,7 +82,7 @@ public class Tela_Diretor_Turma_Alterar extends JFrame {
 		
 		JButton btnNewButton = new JButton("ALTERAR TURMA");
 		btnNewButton.addActionListener(new ActionListener() {
-			@SuppressWarnings("unused")
+		
 			public void actionPerformed(ActionEvent e) {
 				try {
 					

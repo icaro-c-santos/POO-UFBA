@@ -1,0 +1,34 @@
+package aplicacao;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import DAOs.BD;
+import DAOs.Dao_Aluno;
+import DAOs.Dao_Turma;
+import Telas.Tela_Inicial_Diretor;
+import entidades.Aluno;
+
+public class main{
+
+
+
+
+	public static void main(String[] args) {
+     
+		new Dao_Aluno().saveAluno(new Aluno("ICARO SANTOS","01-01-2022","07078332563","ICARO@GMAIL.COM"));
+		
+
+		
+	Tela_Inicial_Diretor.start_tela_diretor(null);
+	List<Aluno> list = BD.bdAluno.stream().filter(p -> p.getNome().equalsIgnoreCase("ICARO")).
+	    collect(Collectors.toList());
+		
+
+	}
+	
+	
+	
+	
+
+}

@@ -41,6 +41,7 @@ public class Tela_Diretor_Aluno_Alterar {
 		JTextField text = new JFormattedTextField();
 		text.setBounds(240, 40, 203, 24);
 		panel_1.add(text);
+		
 		JLabel lbltext = new JLabel("MATRICULA DO ALUNO:");
 		lbltext.setBounds(40, 40, 170, 19);
 		lbltext.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -49,7 +50,6 @@ public class Tela_Diretor_Aluno_Alterar {
 		JButton btntext= new JButton("BUSCAR ALUNO");
 		btntext.setBounds(463, 40, 164, 23);
 		panel_1.add(btntext);
-		
 		
 		textFieldNome = new JFormattedTextField();
 	    textFieldNome.setBounds(243, 110, 203, 24);
@@ -75,31 +75,25 @@ public class Tela_Diretor_Aluno_Alterar {
 			e.printStackTrace();
 		}
 		
-		
 		panel_1.setLayout(null);
-		
-		
 		MaskFormatter datadia = null;
 		try {
 			datadia = new MaskFormatter("##");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
 		MaskFormatter dataMes = null;
 		try {
 			dataMes = new MaskFormatter("##");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
 		MaskFormatter dataAno = null;
 		try {
 			dataAno = new MaskFormatter("####");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
 		
 		
 		final JTextField textFieldDataDia2 = new JFormattedTextField(datadia);
@@ -121,11 +115,6 @@ public class Tela_Diretor_Aluno_Alterar {
 		textFieldDataAno2.setToolTipText("ANO");
 		panel_1.add(textFieldDataAno2);
 		lista.add(textFieldDataAno2);
-		
-
-	
-		
-		
 		
 		final JTextField textFieldCpf = new JFormattedTextField(maskCpf);
 		textFieldCpf.setBounds(263, 181, 163, 25);
@@ -153,7 +142,9 @@ public class Tela_Diretor_Aluno_Alterar {
 		JButton btnNewButton = new JButton("ALTERAR ALUNO");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		        List<String> msgErro = new ArrayList<String>();
+		      
+				
+				List<String> msgErro = new ArrayList<String>();
 		    	String nameUser = textFieldNome.getText();
 		    	String cpfUser = textFieldCpf.getText();
 		    	cpfUser = cpfUser.replace(".", "");
@@ -167,26 +158,31 @@ public class Tela_Diretor_Aluno_Alterar {
 		    	if(!utilitario.valideNome(nameUser)) {msgErro.add("ERRO: NOME INVALIDO");}
 		    	if(!utilitario.validarEmail(emailUser)) {msgErro.add("ERRO: EMAIL INVALIDO");}
 		    	if(data.contains(" ")) { msgErro.add("ERRO: DATA INVALIDA PRENCHA TODOS OS CAMPOS NO FOMATO EX: 01/02/2020");}
+		    	
 		    	if(msgErro.isEmpty()) {
 		    		Dao_Aluno da = new Dao_Aluno();
 			    	Aluno aluno =  da.getAlunoMatricula(Long.parseLong(text.getText()));
-			    	
+			    	if(aluno == null) {
+			    		alert("ALUNO NÃO ENCONTRADO!");
+			    	}else {
+			    		
 			    	aluno.setNome(nameUser);
 			    	aluno.setCpf(cpfUser);
 			    	aluno.setEmail(emailUser);
 			    	aluno.setNascimento(data);
 			    	Object[] options = { "Sim", "Não" }; 
 			        int op =  JOptionPane.showOptionDialog(null, aluno.toString()+" \n DESEJA ALTERAR ESSE ALUNO? \n \n", "ALTERAR ALUNO", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-			        if(op==0) {
-			        	if(da.updateAluno(aluno)) {
-	
-			            	sucess("ALUNO ALTERADO COM SUCESSO!");
-			            			
-			            }else {
-			            	alert("ERRO! O ALUNO NÃO FOI ALTERADO");
-			            }
-			        			 
-			        }	
+				        if(op==0) {
+				        	if(da.updateAluno(aluno)) {
+		
+				            	sucess("ALUNO ALTERADO COM SUCESSO!");
+				            			
+				            }else {
+				            	alert("ERRO! O ALUNO NÃO FOI ALTERADO");
+				            }
+				        			 
+				        }
+			    	}
 			        textFieldNome.setText("");
 					 textFieldCpf.setText("");
 					 textFieldEmail.setText("");

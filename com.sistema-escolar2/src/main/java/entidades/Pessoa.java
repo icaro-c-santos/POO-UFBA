@@ -1,9 +1,5 @@
 package entidades;
 
-import javax.persistence.MappedSuperclass;
-
-
-@MappedSuperclass
 public class Pessoa {
 	
 	private String nome;

@@ -1,0 +1,100 @@
+package DAOs;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import entidades.Professor;
+import entidades.Turma;
+
+public class Dao_Turma {
+	
+	public Dao_Turma() {
+		
+	}
+	
+	
+	public Long saveTurma(Turma turma){
+	
+		BD.bdTurma.add(turma);
+		return turma.getId();
+	
+	}
+	
+	
+	public boolean updateTurma(Turma newTurma){
+		
+		BD.bdTurma.stream().filter(a -> a.getId()==newTurma.getId()).
+			collect(Collectors.toList()).forEach(p ->{
+			p.setDisciplina(newTurma.getDisciplina());
+			p.setProfessor(newTurma.getProfessor());
+		});
+	    return true;
+}
+	
+	
+	
+	public List<Turma> getAll(){
+		return BD.bdTurma;
+	}
+
+
+	public List<Turma> getTurmaDisciplina(Long codigoDisciplina){
+		Stream<Turma>  stream = this.getAll().stream();
+		return stream.filter(p -> p.contemDisciplina(codigoDisciplina)).collect(Collectors.toList());
+	}
+	
+	public List<Turma> getTurmaProfessor(Long codigoProfessor){
+		Stream<Turma> stream = this.getAll().stream();
+		return stream.filter(p -> p.contemProfessor(codigoProfessor)).collect(Collectors.toList());
+	}
+	
+
+	public List<Turma> getTurmaAlnuo(Long matriculaAlubo){
+		return this.getAll().stream().filter(turma -> turma.contemAluno(matriculaAlubo)).collect(Collectors.toList());
+	}
+	
+	public Turma getTurmaCodigo(Long codigo){
+		if(codigo== null) { return null;}
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+	    return em.find(Turma.class, codigo);
+	}
+
+	public boolean deleteTurma(Long codigo) {
+		
+		if(codigo == null){return false;}
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Turma turmaExcluir = em.find(Turma.class,codigo);
+		if(turmaExcluir != null) {
+		    em.remove(turmaExcluir);
+		    em.getTransaction().commit();
+		    em.close();
+		    return true;
+		}
+		em.getTransaction().commit();
+	    em.close();
+		return false;
+	}
+	
+	
+	public void refreshTurma() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		getAll().forEach(p -> em.refresh(p));
+	  em.getTransaction().commit();
+	    em.close();
+	}
+	
+	
+	
+	
+}
