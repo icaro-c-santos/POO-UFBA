@@ -4,3 +4,15 @@ TELAS - ICARO
 ENTIDADES - ICARO
 
 ambos avaliaram e promoveram melhorias nas partes um do outro.
+
+
+porque só tem commits de ICARO?
+
+
+quando marcos baixou o projeto no pc dele e rodava apresentava diversos problemas como por exemplo "rodava um main que já tinha sido excluido", erro de localização de arquivos, etcc.
+decidimos que as funções utilitarias não precisavam do codigo em sí e o DAO/banco também , então fizemos o projeto em um só computador (o meu) e ele mandava as funções e classes para mim que 
+ia implementando no projeto principal. 
+
+porque aparece um marcos filho, marcos vinicius e icaro nos comits?
+no inicio pensamos em separar as tarefas do que cada um fez na  mensagem do commit mais isso deu problema então achamos melhor separar no reade as funções, marcos vinicius foi erro meu pq existem
+dois marcos na sala eu achava que ele era o vinicius até que quando ele conferiu o projeto lá no github viu que tava errado então mudei o nome.
