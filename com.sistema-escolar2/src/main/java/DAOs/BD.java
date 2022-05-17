@@ -21,8 +21,6 @@ public class BD {
 		return idAluno++;
 	}
 	
-	
-	
 	public static Long gerarIdTurma() {
 		return idTumra++;
 	}

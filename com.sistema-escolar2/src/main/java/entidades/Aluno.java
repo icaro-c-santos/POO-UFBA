@@ -9,7 +9,6 @@ public class Aluno extends Pessoa{
 	public Aluno(){
 		this.matricula = BD.gerarIdAluno();
 	}
-	
 	public Aluno(String nome, String nascimento, String cpf,String email) {
 		super(nome, nascimento, cpf,email);
 		this.matricula = BD.gerarIdAluno();
