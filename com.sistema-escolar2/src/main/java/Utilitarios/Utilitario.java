@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 public class Utilitario {
 	
-	
 	public boolean validarCpf(String CPF) {
 	        boolean valid = false;
 	        if(CPF.isEmpty()) {return false;}

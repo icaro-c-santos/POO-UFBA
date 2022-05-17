@@ -38,7 +38,6 @@ public class Dao_Aluno {
 		return BD.bdAluno.stream().filter(p -> p.getCpf().equalsIgnoreCase(cpf)).
 				  collect(Collectors.toList());
 	}
-	
 	public Aluno getAlunoMatricula(Long matricula){
 	List<Aluno> list = BD.bdAluno.stream().filter(p -> p.getMatricula()== matricula).collect(Collectors.toList());
 	if(list.isEmpty()) { return null;}	
