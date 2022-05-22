@@ -17,6 +17,9 @@ public class BD {
 	 private static Long idTumra=1l;
 	private static Long idDisciplina=1l;
 	 
+	public BD() {
+		
+	}
 	public static Long gerarIdAluno() {
 		return idAluno++;
 	}
