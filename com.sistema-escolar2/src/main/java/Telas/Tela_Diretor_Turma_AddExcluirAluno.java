@@ -11,9 +11,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import DAOs.Dao_Aluno;
-import DAOs.Dao_Turma;
+
 import Utilitarios.Utilitario;
+import daos.Dao_Aluno;
+import daos.Dao_Turma;
 import entidades.Aluno;
 import entidades.Turma;
 

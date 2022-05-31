@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import DAOs.Dao_Turma;
+
 import Utilitarios.Utilitario;
+import daos.Dao_Turma;
 import entidades.Turma;
 
 public class Tela_Diretor_Turma_Excluir{

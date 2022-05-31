@@ -8,8 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import DAOs.Dao_Aluno;
+
 import Utilitarios.Utilitario;
+import daos.Dao_Aluno;
 import entidades.Aluno;
 
 public class Tela_Diretor_Aluno_Excluir  {

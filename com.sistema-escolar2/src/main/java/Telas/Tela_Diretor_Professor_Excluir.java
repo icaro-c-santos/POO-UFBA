@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import DAOs.Dao_Professor;
 import Utilitarios.Utilitario;
+import daos.Dao_Professor;
 import entidades.Professor;
 
 public class Tela_Diretor_Professor_Excluir  {

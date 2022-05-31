@@ -1,6 +1,6 @@
 package entidades;
 
-import DAOs.BD;
+import daos.BD;
 
 public class Disciplina {
 	

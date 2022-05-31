@@ -15,8 +15,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-import DAOs.Dao_Aluno;
 import Utilitarios.Utilitario;
+import daos.Dao_Aluno;
 import entidades.Aluno;
 
 @SuppressWarnings("serial")

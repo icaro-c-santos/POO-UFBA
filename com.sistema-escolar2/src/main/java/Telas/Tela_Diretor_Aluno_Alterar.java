@@ -16,8 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.MaskFormatter;
 
-import DAOs.Dao_Aluno;
 import Utilitarios.Utilitario;
+import daos.Dao_Aluno;
 import entidades.Aluno;
 
 public class Tela_Diretor_Aluno_Alterar {

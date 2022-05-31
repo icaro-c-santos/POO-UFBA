@@ -1,4 +1,4 @@
-package DAOs;
+package daos;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;

@@ -3,12 +3,12 @@ package aplicacao;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import DAOs.BD;
-import DAOs.Dao_Aluno;
-import DAOs.Dao_Disciplina;
-import DAOs.Dao_Professor;
-import DAOs.Dao_Turma;
 import Telas.Tela_Inicial_Diretor;
+import daos.BD;
+import daos.Dao_Aluno;
+import daos.Dao_Disciplina;
+import daos.Dao_Professor;
+import daos.Dao_Turma;
 import entidades.Aluno;
 import entidades.Disciplina;
 import entidades.Professor;

@@ -1,4 +1,4 @@
-package DAOs;
+package daos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,18 +8,17 @@ import entidades.Disciplina;
 import entidades.Professor;
 import entidades.Turma;
 
-
-
 public class BD {
 	
-	 private static Long idAluno =1l;
+	private static Long idAluno =1l;
 	private static Long idProfessor=1l;
-	 private static Long idTumra=1l;
+	private static Long idTumra=1l;
 	private static Long idDisciplina=1l;
 	 
 	private BD() {
 		
 	}
+	
 	public static Long gerarIdAluno() {
 		return idAluno++;
 	}
@@ -36,9 +35,9 @@ public class BD {
 		return idProfessor++;
 	}
 	
-	final public static List<Turma> bdTurma = new ArrayList<>();
-	final public static List<Aluno> bdAluno = new ArrayList<Aluno>();
-	final public static List<Disciplina> bdDisciplina = new ArrayList<>();
-	final public static List<Professor> bdProfessors = new ArrayList<>();
+	public static List<Turma> bdTurma = new ArrayList<>();
+	public static List<Aluno> bdAluno = new ArrayList<>();
+	public static List<Disciplina> bdDisciplina = new ArrayList<>();
+	public static List<Professor> bdProfessors = new ArrayList<>();
 	
 }

@@ -14,8 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.MaskFormatter;
-import DAOs.Dao_Professor;
+
 import Utilitarios.Utilitario;
+import daos.Dao_Professor;
 import entidades.Professor;
 
 

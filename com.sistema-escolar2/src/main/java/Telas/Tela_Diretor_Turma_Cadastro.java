@@ -11,10 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import DAOs.Dao_Disciplina;
-import DAOs.Dao_Professor;
-import DAOs.Dao_Turma;
+
 import Utilitarios.Utilitario;
+import daos.Dao_Disciplina;
+import daos.Dao_Professor;
+import daos.Dao_Turma;
 import entidades.Disciplina;
 import entidades.Professor;
 import entidades.Turma;
