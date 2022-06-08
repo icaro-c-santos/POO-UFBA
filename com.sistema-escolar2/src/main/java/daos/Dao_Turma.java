@@ -8,10 +8,6 @@ import entidades.Turma;
 
 public class Dao_Turma {
 	
-	public Dao_Turma() {
-		
-	}
-	
 	
 	public Long saveTurma(Turma turma){
 	

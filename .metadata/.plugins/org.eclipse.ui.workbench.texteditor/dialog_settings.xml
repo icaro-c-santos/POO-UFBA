@@ -5,13 +5,17 @@
 		<item key="DIALOG_Y_ORIGIN" value="357"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Sys"/>
+		<item key="selection" value="Matri"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="matri"/>
+			<item value="equals"/>
+			<item value="=="/>
+			<item value="getMatr"/>
 			<item value="Sys"/>
 			<item value="sys"/>
 			<item value="D"/>
@@ -23,10 +27,6 @@
 			<item value="msg"/>
 			<item value="MATRI"/>
 			<item value="MATRICULA"/>
-			<item value="aluno"/>
-			<item value="mATRICULA"/>
-			<item value="Ano2"/>
-			<item value="ano2"/>
 		</list>
 		<list key="replacehistory">
 			<item value="CODIGO"/>

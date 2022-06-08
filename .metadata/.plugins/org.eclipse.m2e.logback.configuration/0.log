@@ -16907,3 +16907,21 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: expected ST
 2022-05-22 11:37:58,023 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\Nova pasta (2)\POO\com.sistema-escolar2\src\test\resources
 2022-05-22 11:41:25,340 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-05-22 11:41:25,343 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-07 21:34:33,448 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-06-07 21:34:38,252 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.sistema-escolar2:com.sistema-escolar2:0.0.1-SNAPSHOT @ C:\Users\Icarus\Desktop\VAI CARALHO\POO\com.sistema-escolar2\pom.xml.
+2022-06-07 21:34:39,566 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:34:39,569 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-07 21:34:39,586 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:34:39,586 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\VAI CARALHO\POO\com.sistema-escolar2\src\test\resources
+2022-06-07 21:36:21,141 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:36:21,142 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-06-07 21:36:21,144 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:36:21,144 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\VAI CARALHO\POO\com.sistema-escolar2\src\test\resources
+2022-06-07 21:43:50,391 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:43:50,403 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-07 21:43:50,405 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:43:50,405 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\VAI CARALHO\POO\com.sistema-escolar2\src\test\resources
+2022-06-07 21:43:53,674 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:43:53,675 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-07 21:43:53,676 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-07 21:43:53,677 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Icarus\Desktop\VAI CARALHO\POO\com.sistema-escolar2\src\test\resources

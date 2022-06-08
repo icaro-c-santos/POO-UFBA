@@ -8,10 +8,6 @@ import entidades.Disciplina;
 public class Dao_Disciplina{
 	
 	
-	public Dao_Disciplina() {
-		
-	}
-	
 	public Long saveDisciplina(Disciplina disciplina){
 		BD.bdDisciplina.add(disciplina);
 		return disciplina.getCodigo();
