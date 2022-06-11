@@ -30,25 +30,25 @@ public class Tela_Inicial_Diretor extends JFrame {
 	public Tela_Inicial_Diretor() {
 		
 		setBounds(100, 100, 776, 596);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 	
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane = new JTabbedPane(javax.swing.SwingConstants.TOP);
 		tabbedPane.setBounds(10, 36, 744, 525);
 		tabbedPane.setToolTipText("Tex");
 		getContentPane().add(tabbedPane);
 		
-		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane_1 = new JTabbedPane(javax.swing.SwingConstants.TOP);
 		tabbedPane.addTab("ALUNOS", null, tabbedPane_1, null);
 		
-		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane_2 = new JTabbedPane(javax.swing.SwingConstants.TOP);
 		tabbedPane.addTab("PROFESSORES", null, tabbedPane_2, null);
 		
-		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane_3 = new JTabbedPane(javax.swing.SwingConstants.TOP);
 		tabbedPane.addTab("TURMAS", null, tabbedPane_3, null);
 		
-		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane_4 = new JTabbedPane(javax.swing.SwingConstants.TOP);
 		tabbedPane.addTab("DISCIPLINAS", null, tabbedPane_4, null);
 		
 	

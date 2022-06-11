@@ -20,12 +20,12 @@ import entidades.Turma;
 
 @SuppressWarnings("serial")
 public class Tela_Diretor_Turma_AddExcluirAluno extends JFrame {
-
+	private static String taoma = "Tahoma";
 	private JPanel contentPane;
-	private Utilitario utilitario = new Utilitario();
+	private static Utilitario utilitario = new Utilitario();
 	protected static final Throwable ErroInternoTratavel = null;
-	private Dao_Turma dao_turma = new Dao_Turma();
-	private Dao_Aluno dao_aluno = new Dao_Aluno();
+	private static Dao_Turma dao_turma = new Dao_Turma();
+	private static Dao_Aluno dao_aluno = new Dao_Aluno();
 	public void alert(String mensagem) {
 		JOptionPane.showMessageDialog(null,mensagem);
 	
@@ -36,7 +36,7 @@ public class Tela_Diretor_Turma_AddExcluirAluno extends JFrame {
 	
 	public JPanel getPanel() {
 		setBounds(100, 100, 776, 596);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,12 +53,12 @@ public class Tela_Diretor_Turma_AddExcluirAluno extends JFrame {
 		panel.add(textAluno);
 		
 		JLabel lbAluno = new JLabel("CODIGO ALUNO:");
-		lbAluno.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lbAluno.setFont(new Font(taoma, Font.PLAIN, 14));
 		lbAluno.setBounds(211, 110, 150, 27);
 		panel.add(lbAluno);
 		
 		JLabel lblCodigoTurma = new JLabel("CODIGO TURMA:");
-		lblCodigoTurma.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCodigoTurma.setFont(new Font(taoma, Font.PLAIN, 14));
 		lblCodigoTurma.setBounds(211, 165, 120, 27);
 		panel.add(lblCodigoTurma);
 		

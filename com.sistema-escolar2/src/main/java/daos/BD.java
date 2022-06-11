@@ -35,9 +35,9 @@ public class BD {
 		return idProfessor++;
 	}
 	
-	public static List<Turma> bdTurma = new ArrayList<>();
-	public static List<Aluno> bdAluno = new ArrayList<>();
-	public static List<Disciplina> bdDisciplina = new ArrayList<>();
-	public static List<Professor> bdProfessors = new ArrayList<>();
+	public static final List<Turma> bdTurma = new ArrayList<>();
+	public static final List<Aluno> bdAluno = new ArrayList<>();
+	public static final List<Disciplina> bdDisciplina = new ArrayList<>();
+	public static final List<Professor> bdProfessors = new ArrayList<>();
 	
 }
